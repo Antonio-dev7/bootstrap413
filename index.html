@@ -10,6 +10,11 @@
     href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" 
     integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" 
     crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet"> 
+    <!-- font style from goofle fonts.the order of this is important we want our style sheet to be loaded last always-->
+
+    <link rel="stylesheet" href="css/style.css" tyype="text/css">
 </head>
     <style> 
 table {
@@ -30,10 +35,11 @@ td, th {
     <!--Nav-->
     <!--You can,also add (fixed-top but-*note this takes alot of space)it allow your menu to always be on top of the page-->
     <nav class="navbar navbar-light navbar-expand-sm bg-light">
-        <a href="/" class="navbar-brand">
-                    Whiskey Drop</a>
+        <a href="/" class="navbar-brand">Whiskey Drop</a>
 
-        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" 
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+
         <span class="navbar-toggler-icon"></span></button>
 
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -41,7 +47,9 @@ td, th {
                 <li class="active nav-item mr-2"><a class="nav-link" href="/">Home</a></li>
                 <li class="nav-item mr-2"><a class="nav-link" href="">About</a></li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" 
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
           Whiskeys
         </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -58,10 +66,19 @@ td, th {
         <div class="d-none d-md-block">
             <p class="navbar-text my-auto mr-2"><i>Great whiskey delivered to your door</i></p>
             <a href="/login">Sign In / Sign Up</a>
-        </div>
-        <!--</div>-->
+        </div>   
     </nav>
-    <article class="container mt-3"><!-- create space between -->
+    <!--</.div>-->
+
+<!-- 12th december.
+The next thing that I want to do, then, is to start splitting everything out into separate containers to give us flexibility with design.
+instead of article it will be a div.
+
+Previously, our grid was in one container, which sat in the middle of the page, and all of our content was in that one container.
+Now I'm going to break it up into a number of separate containers, which will give us more flexibility with our design.-->
+
+<!--
+    <div class="container alert-container"> < ! - - create space between mt-3. then it became a container. - - >
         <div class="row d-none d-sm-block">
             <div class="col-12">
                 <div class="alert alert-warning">
@@ -69,11 +86,19 @@ td, th {
                 </div>
             </div>
         </div>
+    </div> 
+-->
+
+     <!-- Callout -->
+    <div class="container-fluid callout-container"> <!--stretches the full width across the screen.-->
         <!-- Callout -->
+        <div class="opaque-overlay">&nbsp;</div>
+
         <div class="row">
             <div class="col-12">
                 <section class="callout jumbotron text-center"> <!-- will make your call out section really stand out.-->
-                    <h1>The finest whiskeys delivered to your doorstep.</h1>
+                    <h1 class="jumbotron-header">The finest whiskeys delivered to your doorstep.</h1>
+                    <hr class="block-devider block-devider--orange"> <!--adding horizontal rule-->
                     <p class="lead">Sign up today to start receiving the world's best whiskeys every month.
                         <s class="d-none d-sm-inline">€19.99</s>
                         <span class="d-inline d-sm-none"><br></span>
@@ -84,9 +109,12 @@ td, th {
             </div>
         </div>
         <!-- /.callout -->
-        <hr>
+        </div> <!--where hr was now is a closed div.-->
+
         <!-- Quotes -->
-        <section class="quotes">
+        <div class="container quotes-container">
+        <!-- Quotes -->
+
             <div class="row">
                 <div class="col-12 my-5">
                     <h2 class="text-uppercase">Quotes:</h2>
@@ -123,8 +151,14 @@ td, th {
             </div>
         </section>
         <!-- /.quotes -->
-        <hr>
+        </div><!--used to be an hr now is closed div for new containers.-->
+
+        <section class="quotes"> 
+     
         <!-- Features -->
+        <div class="feature-container">
+        <!-- Features -->
+
         <section class="features">
             <div class="row">
                 <div class="col-12 my-5">
@@ -166,7 +200,8 @@ td, th {
             </div>
         </section>
         <!-- /.features -->
-    </article>
+        </div>
+    
     
     <div class="modal" tabindex="-1" role="dialog" id="signUpModal">
         <div class="modal-dialog" role="document">
